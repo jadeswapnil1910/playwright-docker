@@ -1,17 +1,23 @@
-# Use the Playwright image as the base image
-FROM mcr.microsoft.com/playwright::v1.51.1-jammy
- 
-# Set the working directory inside the container
+# Use official Playwright base image
+FROM mcr.microsoft.com/playwright:v1.51.1-noble
+
+# Set working directory
 WORKDIR /app
- 
-# Copy your application code into the container
-COPY . /app
- 
-# Install Java and other dependencies
-RUN apt-get update && apt-get install -y openjdk-11-jre-headless && npm install
- 
-# Set environment variables or additional configuration if needed
+
+# Copy package files first to install deps (cache better)
+COPY package.json package-lock.json* ./
+
+# Install dependencies
+RUN npm install
+
+# Copy remaining project files
+COPY . .
+
+# Install Java (if needed for your tests)
+RUN apt-get update && apt-get install -y openjdk-11-jre-headless
+
+# Set JAVA_HOME
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
- 
-# Command to run your Playwright test
+
+# Default command to run tests
 CMD ["npm", "test"]

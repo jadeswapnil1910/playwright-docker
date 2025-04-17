@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean:report": "rimraf allure-results allure-report && mkdir allure-results allure-report",
+    "clean:report": "rm -rf allure-results allure-report && mkdir allure-results allure-report",
     "generate:report": "allure generate allure-results --clean",
     "open:report": "allure open allure-report",
     "pretest": "npm run clean:report", 
