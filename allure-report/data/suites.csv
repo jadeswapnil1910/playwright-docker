@@ -1,4 +1,2 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","4564","Login with locked_out_user: secret_sauce","chrome","Thu Apr 17 15:44:40 IST 2025","passed","Thu Apr 17 15:44:45 IST 2025","","readJson.spec.ts","",""
-"","7454","Login with standard_user: secret_sauce","chrome","Thu Apr 17 15:44:29 IST 2025","passed","Thu Apr 17 15:44:36 IST 2025","","readJson.spec.ts","",""
-"","4611","Login with problem_user: secret_sauce","chrome","Thu Apr 17 15:44:45 IST 2025","passed","Thu Apr 17 15:44:49 IST 2025","","readJson.spec.ts","",""
+"","6882","Sauce Lab Appliaction End to End Flow @pom","chrome","Thu Apr 17 23:23:22 IST 2025","passed","Thu Apr 17 23:23:29 IST 2025","","swagLabs.spec.ts","",""
