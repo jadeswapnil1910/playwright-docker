@@ -1,5 +1,5 @@
 # Use official Playwright base image
-FROM mcr.microsoft.com/playwright:v1.51.1-jammy
+FROM mcr.microsoft.com/playwright:v1.51.1-noble
 
 # Set working directory
 WORKDIR /app
@@ -16,14 +16,8 @@ COPY . .
 # Install Java (if needed for your tests)
 RUN apt-get update && apt-get install -y openjdk-11-jre-headless
 
-# Install Allure
-RUN npm install -g allure-commandline --save-dev
-
-# Expose the port for Allure server
-EXPOSE 5000
-
 # Set JAVA_HOME
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 # Default command to run tests
-CMD ["npm", "test", "run", "serve:report"]
+CMD ["npm", "test"]

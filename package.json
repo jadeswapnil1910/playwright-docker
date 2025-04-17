@@ -10,8 +10,7 @@
     "pretest": "npm run clean:report", 
     "posttest": "npm run generate:report && npm run open:report",
     "execute:script": "npx playwright test swagLabs.spec.ts",
-    "test": "npm run execute:script || npm run posttest",
-    "serve:report": "npx allure open -h 0.0.0.0 -p 5000 allure-report"
+    "test": "npm run execute:script || npm run posttest"
   },
   "keywords": [],
   "author": "",
