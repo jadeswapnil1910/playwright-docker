@@ -7,7 +7,6 @@ services:
     container_name: playwright_docker
     volumes:
       - .:/app
-    
     ports:
-      -"5000:5000"
-    command: sh -c "npm run test && npm run serve:report"
+      - 5000:5000
+    command: sh -c "npm run test || echo 'Tests failed'; npm run serve:report"
