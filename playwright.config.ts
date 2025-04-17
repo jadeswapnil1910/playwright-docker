@@ -49,6 +49,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     // video: 'on-first-retry',
     screenshot: 'only-on-failure',
+    headless: true,
   },
 
   // grep: [new RegExp("@Regression"), new RegExp("@Sanity")],
