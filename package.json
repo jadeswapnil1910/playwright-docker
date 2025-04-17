@@ -1,0 +1,27 @@
+{
+  "name": "playwright-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean:report": "rimraf allure-results allure-report && mkdir allure-results allure-report",
+    "generate:report": "allure generate allure-results --clean",
+    "open:report": "allure open allure-report",
+    "pretest": "npm run clean:report", 
+    "posttest": "npm run generate:report && npm run open:report",
+    "execute:script": "npx playwright test readJson.spec.ts --headed",
+    "test": "npm run execute:script || npm run posttest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.1",
+    "allure-commandline": "^2.33.0",
+    "allure-playwright": "^3.2.1",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^6.0.1"
+  }
+}
