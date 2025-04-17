@@ -15,5 +15,5 @@ RUN apt-get update && \\
 # Set environment variables or additional configuration if needed
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
  
-# Command to run your Playwright tests
+# Command to run your Playwright test
 CMD ["npm", "test"]
